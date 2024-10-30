@@ -5,6 +5,8 @@ import React from "react";
 import "./globals2.css";
 import Navbar from "./(old)/(dashboard)/components/Navbar";
 
+import { ThemeProvider } from "next-themes";
+
 const inter = localFont({
   src: "./fonts/InterVF.ttf",
   variable: "--font-inter",
@@ -22,10 +24,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} antialiased`}>
-        <Navbar />
-        {children}
+        {/* <Navbar /> */}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
