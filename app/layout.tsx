@@ -5,7 +5,6 @@ import React from "react";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
 
-import Navbar from "@/components/navigation/navbar";
 // import Navbar from "./(old)/(dashboard)/components/Navbar";
 
 const inter = localFont({
@@ -34,7 +33,6 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
           {children}
         </ThemeProvider>
       </body>
